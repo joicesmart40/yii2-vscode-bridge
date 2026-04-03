@@ -260,6 +260,6 @@ cursor --install-extension /绝对路径/yii2-vscode-bridge-0.0.2.vsix
 
 - 如果项目中有 `ide.php`，建议将其放在项目根目录。
 - 每个工作区执行一次工作区设置命令。
-- 修改 `ide.php` 或配置文件后，重新运行 `Yii2 Bridge: Reindex Project`。
+- 修改 `ide.php` 或配置文件并保存后，插件通常会自动刷新索引；如果补全、悬停或跳转没有及时更新，可手动执行 `Yii2 Bridge: Reindex Project`。
 - 安装后建议执行一次 `Yii2 Bridge: Apply Workspace Settings`，然后重载窗口。
 - `Yii2 Bridge: Apply Workspace Settings` 会在当前项目中生成或更新 `.vscode/settings.json`，写入推荐的工作区级 Intelephense 配置。
