@@ -5,7 +5,7 @@
   "version": "0.0.2",
   "publisher": "local",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/flyu518/yii2-vscode-bridge.git"
