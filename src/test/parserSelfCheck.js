@@ -22,6 +22,24 @@ function run() {
   assert.strictEqual(ideComponents[0].name, 'db');
   assert.strictEqual(ideComponents[0].type, '\\yii\\db\\Connection');
 
+  const autocompleteFixture = [
+    '<?php',
+    '/**',
+    ' * Example: @property \\vendor\\package\\Rollbar|__Rollbar $rollbar',
+    ' */',
+    'class Yii {}',
+    '',
+    '/**',
+    ' * @property \\yii\\web\\User|__WebUser $user',
+    ' * @property app\\components\\redis\\Mutex $mutex',
+    ' */',
+    'class __Application {}'
+  ].join('\n');
+
+  const autocompleteComponents = parseIdeStub(autocompleteFixture, fakeUri('__autocomplete.php'));
+  assert.strictEqual(autocompleteComponents.length, 2);
+  assert.strictEqual(autocompleteComponents[0].name, 'user');
+
   const configFixture = [
     '<?php',
     'return [',

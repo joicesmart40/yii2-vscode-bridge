@@ -1,7 +1,7 @@
 {
   "name": "yii2-vscode-bridge",
   "displayName": "Yii2 VSCode Bridge",
-  "description": "为 Yii2 项目补充 Yii::$app、params、动态属性、getter 和关系方法等 VSCode 智能提示能力。",
+  "description": "用于配合 PHP Intelephense，弥补其在 Yii2 框架中的动态语义识别不足，适用于 VSCode、Cursor 等基于 VSCode 扩展生态的编辑器。",
   "version": "0.0.1",
   "publisher": "local",
   "private": true,
@@ -48,7 +48,8 @@
         "yii2Bridge.ideStubFiles": {
           "type": "array",
           "default": [
-            "ide.php"
+            "ide.php",
+            "config/__autocomplete.php"
           ],
           "items": {
             "type": "string"
@@ -60,7 +61,8 @@
           "default": [
             "common/config/*.php",
             "api/config/*.php",
-            "console/config/*.php"
+            "console/config/*.php",
+            "config/*.php"
           ],
           "items": {
             "type": "string"
@@ -78,6 +80,11 @@
             "api/**/*.php",
             "common/**/*.php",
             "console/**/*.php",
+            "models/**/*.php",
+            "controllers/**/*.php",
+            "components/**/*.php",
+            "services/**/*.php",
+            "commands/**/*.php",
             "vendor/yiisoft/yii2/**/*.php"
           ],
           "items": {
@@ -90,7 +97,8 @@
           "default": [
             "common/config/params*.php",
             "api/config/params*.php",
-            "console/config/params*.php"
+            "console/config/params*.php",
+            "config/params*.php"
           ],
           "items": {
             "type": "string"

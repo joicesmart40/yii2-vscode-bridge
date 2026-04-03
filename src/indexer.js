@@ -126,10 +126,33 @@ class ProjectIndex {
 async function buildProjectIndex() {
   const index = new ProjectIndex();
   const config = vscode.workspace.getConfiguration('yii2Bridge');
-  const ideStubFiles = config.get('ideStubFiles', ['ide.php']);
-  const configFiles = config.get('configFiles', ['common/config/*.php', 'common/config/*-local.php', 'api/config/*.php', 'api/config/*-local.php', 'console/config/*.php', 'console/config/*-local.php']);
-  const paramsFiles = config.get('paramsFiles', ['common/config/params*.php', 'api/config/params*.php', 'console/config/params*.php']);
-  const classFiles = config.get('classFiles', ['api/**/*.php', 'common/**/*.php', 'console/**/*.php', 'vendor/yiisoft/yii2/**/*.php']);
+  const ideStubFiles = config.get('ideStubFiles', ['ide.php', 'config/__autocomplete.php']);
+  const configFiles = config.get('configFiles', [
+    'common/config/*.php',
+    'common/config/*-local.php',
+    'api/config/*.php',
+    'api/config/*-local.php',
+    'console/config/*.php',
+    'console/config/*-local.php',
+    'config/*.php'
+  ]);
+  const paramsFiles = config.get('paramsFiles', [
+    'common/config/params*.php',
+    'api/config/params*.php',
+    'console/config/params*.php',
+    'config/params*.php'
+  ]);
+  const classFiles = config.get('classFiles', [
+    'api/**/*.php',
+    'common/**/*.php',
+    'console/**/*.php',
+    'models/**/*.php',
+    'controllers/**/*.php',
+    'components/**/*.php',
+    'services/**/*.php',
+    'commands/**/*.php',
+    'vendor/yiisoft/yii2/**/*.php'
+  ]);
   const enableBuiltInComponents = config.get('enableBuiltInComponents', true);
 
   for (const pattern of ideStubFiles) {

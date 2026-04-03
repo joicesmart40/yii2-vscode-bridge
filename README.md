@@ -1,12 +1,30 @@
 # Yii2 VSCode Bridge
 
-这是一个面向 Yii2 项目的本地 VSCode 扩展，适用于大量使用 `Yii::$app->component` 的场景。
+Yii2 VSCode Bridge 是一个面向 Yii2 项目的扩展，主要用于配合 PHP Intelephense 使用，弥补其在 Yii2 框架动态语义识别上的不足。
+
+它不是用来替代 Intelephense，而是作为补充层，为 `Yii::$app`、`params`、动态属性、getter、关系方法等 Yii2 常见场景提供更好的补全、跳转和悬停信息。
+
+它不局限于 VSCode，只要是兼容 VSCode 扩展生态的编辑器都可以使用，例如 VSCode、Cursor 等。
+
+目前默认兼容 Yii2 高级版和基础版目录结构：
+
+- 高级版：`api/`、`common/`、`console/`
+- 基础版：根目录 `config/`、`models/`、`controllers/`、`components/`、`services/`、`commands/`
+
+## 适用场景
+
+适用于已经使用 PHP Intelephense，但在 Yii2 项目中经常遇到以下问题的场景：
+
+- `Yii::$app->db`、`Yii::$app->getDb()` 无法正确补全或跳转
+- `Yii::$app->params[...]` 无法识别参数键来源
+- ActiveRecord 的动态属性、getter、关系方法提示不足
+- 在基于 VSCode 的编辑器里，Yii2 项目体验明显弱于 PhpStorm
 
 ## 功能说明
 
 | 场景 | 是否支持 | 数据来源 | 备注 |
 | --- | --- | --- | --- |
-| `Yii::$app->component` 属性补全 | 支持 | `ide.php`、Yii config、内置组件映射 | 适合 `db`、`request`、`cache` 等组件 |
+| `Yii::$app->component` 属性补全 | 支持 | `ide.php`、`config/__autocomplete.php`、Yii config、内置组件映射 | 适合 `db`、`request`、`cache` 等组件 |
 | `Yii::$app->getXxx()` 方法补全 | 支持 | 应用类及父类方法索引 | 例如 `getDb()` |
 | `Yii::$app->params['key']` 字面量参数键提示/跳转 | 支持 | `params.php` / `params-local.php` 顶层键索引 | 仅支持顶层键 |
 | `Yii::$app->params[$key]` 动态参数键静态推断 | 部分支持 | 变量字面量回溯 + 参数索引 | 仅支持当前文件附近能静态看出的字符串分支，不是运行时变量值求值 |
@@ -47,7 +65,7 @@
 
 ### 1. `ide.php`
 
-- 文件位置：通常是项目根目录的 `ide.php`
+- 文件位置：通常是项目根目录的 `ide.php`，或基础版项目里的 `config/__autocomplete.php`
 - 读取方式：解析类注释里的 `@property`
 - 适合放什么：
   - `Yii::$app->redis`
@@ -75,6 +93,7 @@ class MyApplication
   - `api/config/*-local.php`
   - `console/config/*.php`
   - `console/config/*-local.php`
+  - `config/*.php`
 - 读取方式：扫描 `components` 数组里的 `class`
 - 适合放什么：
   - `db`
@@ -186,6 +205,7 @@ public function getRecognition()
   - `common/config/params*.php`
   - `api/config/params*.php`
   - `console/config/params*.php`
+  - `config/params*.php`
 - 读取方式：扫描 `return [...]` 顶层数组键
 - 适合放什么：
   - `Yii::$app->params['detect_config']`
@@ -211,7 +231,7 @@ public function getRecognition()
 2. 类型是否写成了静态可解析的形式
 3. 改完后是否执行了 `Yii2 Bridge: Reindex Project`
 
-## 本地安装方式
+## 安装方式
 
 1. 先打包生成 `.vsix`：
 
@@ -232,7 +252,7 @@ code --install-extension /绝对路径/yii2-vscode-bridge-0.0.1.vsix
 cursor --install-extension /绝对路径/yii2-vscode-bridge-0.0.1.vsix
 ```
 
-4. 也可以通过界面安装：
+4. 也可以通过兼容 VSCode 扩展生态的编辑器界面安装：
    扩展面板 -> `...` -> `Install from VSIX...`
 
 ## 推荐用法
