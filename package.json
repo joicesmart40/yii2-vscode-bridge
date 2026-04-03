@@ -1,7 +1,7 @@
 {
   "name": "yii2-vscode-bridge",
   "displayName": "Yii2 VSCode Bridge",
-  "description": "用于配合 PHP Intelephense，弥补其在 Yii2 框架中的动态语义识别不足，适用于 VSCode、Cursor 等基于 VSCode 扩展生态的编辑器。",
+  "description": "面向 Yii2 项目的桥接扩展，用于增强 PHP Intelephense 在 VSCode、Cursor 等编辑器中的补全、跳转与悬停体验。",
   "version": "0.0.2",
   "publisher": "local",
   "private": true,
@@ -113,9 +113,15 @@
   },
   "keywords": [
     "yii2",
+    "yii",
     "php",
     "intelephense",
-    "vscode"
+    "vscode",
+    "cursor",
+    "phpstorm",
+    "ide-helper",
+    "developer-tools",
+    "language-server"
   ],
   "devDependencies": {
     "@vscode/vsce": "^3.7.1"

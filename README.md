@@ -1,8 +1,8 @@
 # Yii2 VSCode Bridge
 
-Yii2 VSCode Bridge 是一个面向 Yii2 项目的扩展，主要用于配合 PHP Intelephense 使用，弥补其在 Yii2 框架动态语义识别上的不足。
+Yii2 VSCode Bridge 是一个面向 Yii2 项目的桥接扩展，主要用于配合 PHP Intelephense 使用，增强其在 VSCode、Cursor 等编辑器中的补全、跳转与悬停体验。
 
-它不是用来替代 Intelephense，而是作为补充层，为 `Yii::$app`、`params`、动态属性、getter、关系方法等 Yii2 常见场景提供更好的补全、跳转和悬停信息。
+它不是用来替代 Intelephense，而是作为补充层，为 `Yii::$app`、`params`、动态属性、getter、关系方法等 Yii2 常见场景提供更好的编辑器支持。
 
 它不局限于 VSCode，只要是兼容 VSCode 扩展生态的编辑器都可以使用，例如 VSCode、Cursor 等。
 
